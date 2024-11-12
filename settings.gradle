@@ -1,0 +1,5 @@
+rootProject.name = 'LiteGamma'
+include 'NMS_1_16__1_17'
+include 'share'
+include 'NMS_1_18__1_21'
+

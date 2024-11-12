@@ -1,0 +1,96 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'ru.zako'
+class VersionGenerator {
+    private static String mainVersion = "1.0"
+
+
+    static String generateVersion() {
+        return mainVersion+"."+new Date().format('yyyyMMddHHmm');
+    }
+}
+version = VersionGenerator.generateVersion()
+compileJava.options.encoding = 'UTF-8'
+compileTestJava.options.encoding = 'UTF-8'
+
+allprojects {
+    repositories {
+        // protocolLib
+        maven { url "https://repo.dmulloy2.net/repository/public/" }
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        name = "papermc-repo"
+        url = "https://repo.papermc.io/repository/maven-public/"
+    }
+    maven {
+        name = "sonatype"
+        url = "https://oss.sonatype.org/content/groups/public/"
+    }
+}
+
+dependencies {
+    implementation 'io.netty:netty-buffer:4.1.108.Final'
+
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    testCompileOnly 'org.projectlombok:lombok:1.18.24'
+    testAnnotationProcessor 'org.projectlombok:lombok:1.18.24'
+
+    compileOnly 'com.comphenix.protocol:ProtocolLib:5.1.0'
+    compileOnly "com.destroystokyo.paper:paper-api:1.16.5-R0.1-SNAPSHOT"
+
+    implementation project(path: ':share')
+    implementation project(path: ':NMS_1_16__1_17')
+    implementation project(path: ':NMS_1_18__1_21')
+
+//    compileOnly(fileTree("./libs/"))
+//    shadow files('./libs/PacketWrapper.jar')
+}
+
+def targetJavaVersion = 16
+java {
+    def javaVersion = JavaVersion.toVersion(targetJavaVersion)
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+    if (JavaVersion.current() < javaVersion) {
+        toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+
+    if (targetJavaVersion >= 10 || JavaVersion.current().isJava10Compatible()) {
+        options.release.set(targetJavaVersion)
+    }
+}
+
+shadowJar {
+    archiveFileName = "LiteGamma.jar"
+    archiveClassifier.set('')
+    dependencies {
+        include(project(':share'))
+        include(project(':NMS_1_16__1_17'))
+        include(project(':NMS_1_18__1_21'))
+    }
+}
+
+processResources {
+    def props = [version: version]
+    inputs.properties props
+    filteringCharset 'UTF-8'
+    filesMatching('plugin.yml') {
+        expand props
+    }
+}
+tasks.named('jar').configure {
+    dependsOn tasks.named('shadowJar')
+    enabled = false
+}

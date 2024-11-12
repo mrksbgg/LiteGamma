@@ -1,0 +1,14 @@
+name: LiteGamma
+version: '${version}'
+main: ru.zako.litegamma.LiteGamma
+api-version: '1.16'
+
+authors: ["3AK0"]
+
+depend:
+  - ProtocolLib
+
+
+commands:
+  litegamma:
+    name: litegamma
