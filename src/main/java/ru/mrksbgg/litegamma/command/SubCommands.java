@@ -1,9 +1,9 @@
-package ru.zako.litegamma.command;
+package ru.mrksbgg.litegamma.command;
 
 import com.google.common.collect.ClassToInstanceMap;
 import com.google.common.collect.ImmutableClassToInstanceMap;
 import org.bukkit.plugin.Plugin;
-import ru.zako.litegamma.command.list.ReloadCommand;
+import ru.mrksbgg.litegamma.command.list.ReloadCommand;
 
 import javax.annotation.Nullable;
 import java.util.Collection;

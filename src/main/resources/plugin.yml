@@ -1,6 +1,6 @@
 name: LiteGamma
 version: '${version}'
-main: ru.zako.litegamma.LiteGamma
+main: ru.mrksbgg.litegamma.LiteGamma
 api-version: '1.16'
 
 authors: ["3AK0"]

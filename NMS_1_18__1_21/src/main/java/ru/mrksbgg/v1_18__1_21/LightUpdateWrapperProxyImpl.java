@@ -1,9 +1,9 @@
-package ru.zako.v1_18__1_21;
+package ru.mrksbgg.v1_18__1_21;
 
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.reflect.StructureModifier;
 import com.comphenix.protocol.wrappers.WrappedLevelChunkData;
-import ru.zako.AbstractLightUpdateWrapperProxy;
+import ru.mrksbgg.AbstractLightUpdateWrapperProxy;
 
 import java.util.ArrayList;
 import java.util.Arrays;

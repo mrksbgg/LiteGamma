@@ -1,4 +1,4 @@
-package ru.zako.litegamma.command.list;
+package ru.mrksbgg.litegamma.command.list;
 
 import lombok.Getter;
 import lombok.NonNull;
@@ -7,9 +7,10 @@ import org.bukkit.ChatColor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.permissions.Permission;
 import org.bukkit.plugin.Plugin;
+import org.checkerframework.checker.units.qual.C;
 import org.jetbrains.annotations.NotNull;
-import ru.zako.litegamma.Config;
-import ru.zako.litegamma.command.SubCommand;
+import ru.mrksbgg.litegamma.Config;
+import ru.mrksbgg.litegamma.command.SubCommand;
 
 import java.util.List;
 
@@ -28,6 +29,7 @@ public class ReloadCommand implements SubCommand {
         plugin.reloadConfig();
         Config.load(plugin.getConfig());
 
-        sender.sendMessage(ChatColor.GREEN+"Config has been reloaded!");
+        sender.sendMessage(
+                ChatColor.GRAY + "[" + ChatColor.GREEN + "LiteGamma" + ChatColor.GRAY + "]" + ChatColor.WHITE + " Конфиг перезагружен!");
     }
 }

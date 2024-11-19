@@ -1,9 +1,9 @@
-package ru.zako.litegamma;
+package ru.mrksbgg.litegamma;
 
 import com.comphenix.protocol.ProtocolLibrary;
 import com.comphenix.protocol.ProtocolManager;
 import org.bukkit.plugin.java.JavaPlugin;
-import ru.zako.litegamma.command.LiteGammaCommand;
+import ru.mrksbgg.litegamma.command.LiteGammaCommand;
 
 public final class LiteGamma extends JavaPlugin {
 

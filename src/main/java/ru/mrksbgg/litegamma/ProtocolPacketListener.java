@@ -1,4 +1,4 @@
-package ru.zako.litegamma;
+package ru.mrksbgg.litegamma;
 
 import com.comphenix.protocol.ProtocolManager;
 import com.comphenix.protocol.events.ListenerPriority;
@@ -6,7 +6,7 @@ import com.comphenix.protocol.events.PacketAdapter;
 import com.comphenix.protocol.events.PacketEvent;
 import lombok.Getter;
 import org.bukkit.plugin.Plugin;
-import ru.zako.LightUpdateWrapperProxy;
+import ru.mrksbgg.LightUpdateWrapperProxy;
 
 @Getter
 public class ProtocolPacketListener extends PacketAdapter {

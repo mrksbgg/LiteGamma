@@ -1,11 +1,10 @@
-package ru.zako.litegamma;
+package ru.mrksbgg.litegamma;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.utility.MinecraftProtocolVersion;
 import lombok.SneakyThrows;
 import lombok.experimental.UtilityClass;
-import ru.zako.LightUpdateWrapperProxy;
 
 import java.lang.reflect.Constructor;
 
@@ -36,7 +35,7 @@ public class WrapperProvider {
         }
 
         try {
-            proxy = (Class<LightUpdateWrapperProxy>) Class.forName("ru.zako." + path + ".LightUpdateWrapperProxyImpl");
+            proxy = (Class<LightUpdateWrapperProxy>) Class.forName("ru.mrksbgg." + path + ".LightUpdateWrapperProxyImpl");
         } catch (Exception e) {
             throw new IllegalStateException("Unsupported Minecraft Protocol Version - " + PROTOCOL, e);
         }

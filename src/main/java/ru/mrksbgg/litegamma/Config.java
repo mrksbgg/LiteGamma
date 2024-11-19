@@ -1,4 +1,4 @@
-package ru.zako.litegamma;
+package ru.mrksbgg.litegamma;
 
 import lombok.experimental.UtilityClass;
 import org.bukkit.configuration.file.FileConfiguration;

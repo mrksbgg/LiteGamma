@@ -1,4 +1,4 @@
-package ru.zako;
+package ru.mrksbgg.litegamma;
 
 import java.util.List;
 

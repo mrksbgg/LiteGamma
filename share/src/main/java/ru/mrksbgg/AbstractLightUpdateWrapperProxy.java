@@ -1,4 +1,4 @@
-package ru.zako;
+package ru.mrksbgg;
 
 import com.comphenix.protocol.events.PacketContainer;
 import com.comphenix.protocol.reflect.StructureModifier;

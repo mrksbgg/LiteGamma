@@ -1,8 +1,8 @@
-package ru.zako.v1_16__1_17;
+package ru.mrksbgg.v1_16__1_17;
 
 import com.comphenix.protocol.PacketType;
 import com.comphenix.protocol.events.PacketContainer;
-import ru.zako.LightUpdateWrapperProxy;
+import ru.mrksbgg.LightUpdateWrapperProxy;
 
 import java.util.Arrays;
 import java.util.List;

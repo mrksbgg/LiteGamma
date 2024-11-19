@@ -1,4 +1,4 @@
-package ru.zako.litegamma.command;
+package ru.mrksbgg.litegamma.command;
 
 import lombok.NonNull;
 import org.bukkit.command.CommandSender;
